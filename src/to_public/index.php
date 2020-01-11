@@ -119,7 +119,7 @@ function dispatchInDynamicRoutes ($routes) {
 		return $p;
 	}, $routes);
 	//get parameters from current URL
-	$currentUrl = buildQueryPath($_SERVER['REQUEST_URI']);
+	$current = explode('index', explode('?',$_SERVER['REQUEST_URI'])[0])[0];
 	//compare path & query
 	foreach ($paths as $path) {
 		if (count($currentUrl['path']) === count($path['path'])) {
